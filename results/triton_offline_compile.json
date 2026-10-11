@@ -1,0 +1,1222 @@
+{
+  "triton_version": "3.1.0",
+  "target": {
+    "backend": "cuda",
+    "arch": 80,
+    "warp_size": 32
+  },
+  "scope": "Offline AST -> PTX -> cubin compilation only. No GPU numerical execution, race checks, or timing.",
+  "successes": 48,
+  "failures": 0,
+  "results": [
+    {
+      "kernel": "_vector_add_kernel",
+      "dtype": "fp32",
+      "signature": {
+        "X": "*fp32",
+        "Y": "*fp32",
+        "Z": "*fp32"
+      },
+      "constants": {
+        "N": 1003,
+        "BLOCK": 256
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 3149,
+      "cubin_bytes": 5864,
+      "ptx_sha256": "ad4ef15d3c229465edbf647943fcc23ab34da317bdd7a2864dd9d1f5a4a1e5e9",
+      "cubin_sha256": "9bef092b7ad4e35fe19ac2ef635e84d2dde15b87a4ed3904faa99ca13eaae82a"
+    },
+    {
+      "kernel": "_bias_relu_kernel",
+      "dtype": "fp32",
+      "signature": {
+        "X": "*fp32",
+        "Bias": "*fp32",
+        "Y": "*fp32"
+      },
+      "constants": {
+        "TOTAL": 2307,
+        "N": 769,
+        "BLOCK": 256
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 3732,
+      "cubin_bytes": 6632,
+      "ptx_sha256": "52845e749e718d4db478d424e12046653d12fd3270bd3efd3f35b6cc510b88e9",
+      "cubin_sha256": "34ad32924c28ea59e887c4e25af2de05770b534b8c566e011ad0d983b5600791"
+    },
+    {
+      "kernel": "_row_reduce_kernel",
+      "dtype": "fp32",
+      "signature": {
+        "X": "*fp32",
+        "Y": "*fp32"
+      },
+      "constants": {
+        "N": 769,
+        "IS_MAX": false,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 6249,
+      "cubin_bytes": 8800,
+      "ptx_sha256": "6380da7fdbe008958ad8e11ddc6b98c27e7f5ab68495eef650fa8781646a38cd",
+      "cubin_sha256": "3f97b5825741993c844da596c61e94b49179456d9ee8c888d04a49419cda90a1"
+    },
+    {
+      "kernel": "_row_reduce_kernel",
+      "dtype": "fp32",
+      "signature": {
+        "X": "*fp32",
+        "Y": "*fp32"
+      },
+      "constants": {
+        "N": 769,
+        "IS_MAX": true,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 6256,
+      "cubin_bytes": 8800,
+      "ptx_sha256": "ae9c5dfd1fa0c167fbb859da21d5707d4b6859c6b40618eca84c5f0deb31f584",
+      "cubin_sha256": "9cb2dd187a0b1de085e9a651d15c2e4cc95332645974d075eedd9361da86672b"
+    },
+    {
+      "kernel": "_softmax_kernel",
+      "dtype": "fp32",
+      "signature": {
+        "X": "*fp32",
+        "Y": "*fp32"
+      },
+      "constants": {
+        "N": 769,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 10539,
+      "cubin_bytes": 14048,
+      "ptx_sha256": "b7c0026ec58d2e5867e453889d200edcbcb152d82a41f768639bd5d23e18c088",
+      "cubin_sha256": "8d4c111409a32a7f019cdb2af45a1fd134a1c6d4f30ea40e56b8748986612257"
+    },
+    {
+      "kernel": "_softmax_kernel",
+      "dtype": "fp32",
+      "signature": {
+        "X": "*fp32",
+        "Y": "*fp32"
+      },
+      "constants": {
+        "N": 8192,
+        "BLOCK": 8192
+      },
+      "options": {
+        "num_warps": 8,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 25156,
+      "cubin_bytes": 32352,
+      "ptx_sha256": "ac1cd5b2491b0f2ba4cd7347fd1ab55534a40c55eaee74e6d98f2582d10c53ea",
+      "cubin_sha256": "33fc28b9b71a5510f155e8eecd9730292ce18072ebb3ae192dded13a95a8e471"
+    },
+    {
+      "kernel": "_transpose_naive_kernel",
+      "dtype": "fp32",
+      "signature": {
+        "X": "*fp32",
+        "Y": "*fp32"
+      },
+      "constants": {
+        "M": 127,
+        "N": 65,
+        "BLOCK": 256
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 3182,
+      "cubin_bytes": 6120,
+      "ptx_sha256": "e7de5bcf17e690e1d527b0129dff4967ad45e972372e14f16db7b2a26a90feda",
+      "cubin_sha256": "8f7b6c079cb7579eb704210d5b651f7e346a3b875cc3f00849362c9e7dafff44"
+    },
+    {
+      "kernel": "_transpose_tiled_kernel",
+      "dtype": "fp32",
+      "signature": {
+        "X": "*fp32",
+        "Y": "*fp32"
+      },
+      "constants": {
+        "M": 127,
+        "N": 65,
+        "TILE": 32
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 8490,
+      "cubin_bytes": 13152,
+      "ptx_sha256": "79836453e0091a9434df33c3fd8c17f28b283478b187d991e9bab25b240202ac",
+      "cubin_sha256": "795154bdca58500d846f32d7f006534036f342fd4817e1f7f9dfe39e2c44df2f"
+    },
+    {
+      "kernel": "_matmul_naive_kernel",
+      "dtype": "fp32",
+      "signature": {
+        "A": "*fp32",
+        "B": "*fp32",
+        "C": "*fp32"
+      },
+      "constants": {
+        "M": 17,
+        "N": 33,
+        "K": 19,
+        "BLOCK": 128
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 3113,
+      "cubin_bytes": 8040,
+      "ptx_sha256": "262af7997a08ad1535aecd8648fb89a125a65f4849f427b07a6a9947952fd5ee",
+      "cubin_sha256": "12caa70383fc368b6a6f92b9f2a4c74699a1c7a98125ea34272a2ea337df5f0e"
+    },
+    {
+      "kernel": "_matmul_tiled_kernel",
+      "dtype": "fp32",
+      "signature": {
+        "A": "*fp32",
+        "B": "*fp32",
+        "C": "*fp32"
+      },
+      "constants": {
+        "M": 127,
+        "N": 65,
+        "K": 93,
+        "BM": 32,
+        "BN": 32,
+        "BK": 32
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 31772,
+      "cubin_bytes": 46048,
+      "ptx_sha256": "35359e816f3cc206fece21f6eafb417b95fdc34a390f22b0572d9c03b9bba38f",
+      "cubin_sha256": "3a96bb039a535e823d3918b9e0f4d802466e212f1544fdd132adb8cf2980a791"
+    },
+    {
+      "kernel": "_norm_kernel",
+      "dtype": "fp32",
+      "signature": {
+        "X": "*fp32",
+        "W": "*fp32",
+        "Bias": "*fp32",
+        "Y": "*fp32"
+      },
+      "constants": {
+        "N": 769,
+        "EPS": 1e-05,
+        "IS_RMS": false,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 13346,
+      "cubin_bytes": 16304,
+      "ptx_sha256": "3e74eebd2481851e219fc0c9a0597d4772d211968c86588a1cbfdd9fe8d406a7",
+      "cubin_sha256": "d12d66bb5ea115171d920093827ed3ad46d66d56113feaf070ff0948cf2c15d4"
+    },
+    {
+      "kernel": "_norm_kernel",
+      "dtype": "fp32",
+      "signature": {
+        "X": "*fp32",
+        "W": "*fp32",
+        "Bias": "*fp32",
+        "Y": "*fp32"
+      },
+      "constants": {
+        "N": 769,
+        "EPS": 1e-05,
+        "IS_RMS": true,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 9641,
+      "cubin_bytes": 12464,
+      "ptx_sha256": "2e75fec67c9442495ea054279a1b37cb21319787cb8fd889ef5dbe4051bdef39",
+      "cubin_sha256": "95309fcf44827806f9ac80d40db548da1bec5558f0f0940f11fba8b535e66c80"
+    },
+    {
+      "kernel": "_attention_kernel",
+      "dtype": "fp32",
+      "signature": {
+        "Q": "*fp32",
+        "K": "*fp32",
+        "V": "*fp32",
+        "Mask": "*fp32",
+        "O": "*fp32"
+      },
+      "constants": {
+        "L": 19,
+        "S": 37,
+        "D": 16,
+        "SCALE": 0.25,
+        "CAUSAL": false,
+        "QUERY_START": 0,
+        "HAS_MASK": false,
+        "MASK_BH_STRIDE": 0,
+        "BM": 16,
+        "BN": 32
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "status": "compiled",
+      "ptx_characters": 22438,
+      "cubin_bytes": 32736,
+      "ptx_sha256": "5c5006b975cb8ffd5c8b44e48c00768681e776d8882368537eaef0505e8f473a",
+      "cubin_sha256": "aa6f7ecd7c55adbf2eed9fbc0fbddb47288ff679f16f8e4acb558d747462099f"
+    },
+    {
+      "kernel": "_attention_kernel",
+      "dtype": "fp32",
+      "signature": {
+        "Q": "*fp32",
+        "K": "*fp32",
+        "V": "*fp32",
+        "Mask": "*fp32",
+        "O": "*fp32"
+      },
+      "constants": {
+        "L": 1,
+        "S": 65,
+        "D": 32,
+        "SCALE": 0.1767766952966369,
+        "CAUSAL": true,
+        "QUERY_START": 64,
+        "HAS_MASK": false,
+        "MASK_BH_STRIDE": 0,
+        "BM": 16,
+        "BN": 32
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "status": "compiled",
+      "ptx_characters": 28862,
+      "cubin_bytes": 39904,
+      "ptx_sha256": "ba009ba23f56e24ec1a5a7e76b4492f3638c1ce9bc1400c3e8b0006f8eed1e82",
+      "cubin_sha256": "978109366b74fd67833aae6e68f864beb0f199fb862ee76d1caef59aeb7188b8"
+    },
+    {
+      "kernel": "_attention_kernel",
+      "dtype": "fp32",
+      "signature": {
+        "Q": "*fp32",
+        "K": "*fp32",
+        "V": "*fp32",
+        "Mask": "*i1",
+        "O": "*fp32"
+      },
+      "constants": {
+        "L": 19,
+        "S": 37,
+        "D": 64,
+        "SCALE": 0.125,
+        "CAUSAL": true,
+        "QUERY_START": 0,
+        "HAS_MASK": true,
+        "MASK_BH_STRIDE": 703,
+        "BM": 16,
+        "BN": 32
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "status": "compiled",
+      "ptx_characters": 64485,
+      "cubin_bytes": 91872,
+      "ptx_sha256": "2c865286b29ef126c246998c653b27496ec5957fad699795e4ec7f26a040d886",
+      "cubin_sha256": "0ac4482732d56d90d65eb9a662c8c32eb0a6fd62aaf89021f788213a9477ff9f"
+    },
+    {
+      "kernel": "_attention_kernel",
+      "dtype": "fp32",
+      "signature": {
+        "Q": "*fp32",
+        "K": "*fp32",
+        "V": "*fp32",
+        "Mask": "*i1",
+        "O": "*fp32"
+      },
+      "constants": {
+        "L": 19,
+        "S": 37,
+        "D": 128,
+        "SCALE": 0.08838834764831845,
+        "CAUSAL": false,
+        "QUERY_START": 0,
+        "HAS_MASK": true,
+        "MASK_BH_STRIDE": 703,
+        "BM": 16,
+        "BN": 32
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "status": "compiled",
+      "ptx_characters": 103150,
+      "cubin_bytes": 145504,
+      "ptx_sha256": "189adc4816782968d9ff1a41e3294aef161e18602395ef28179e15cd828b5226",
+      "cubin_sha256": "a9686a3fb68007e23fdeb6c246fb09dfa5ffd365ed24d41edbc8eeb6ae145b20"
+    },
+    {
+      "kernel": "_vector_add_kernel",
+      "dtype": "fp16",
+      "signature": {
+        "X": "*fp16",
+        "Y": "*fp16",
+        "Z": "*fp16"
+      },
+      "constants": {
+        "N": 1003,
+        "BLOCK": 256
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 3029,
+      "cubin_bytes": 5864,
+      "ptx_sha256": "e748943e6a5b870ba0c0fac87006dd7eae7529a26890c60d56e132d390a7e4aa",
+      "cubin_sha256": "eae364def002bb520956d7b475b9987608474a5536275f0120d7a628088fa2b5"
+    },
+    {
+      "kernel": "_bias_relu_kernel",
+      "dtype": "fp16",
+      "signature": {
+        "X": "*fp16",
+        "Bias": "*fp16",
+        "Y": "*fp16"
+      },
+      "constants": {
+        "TOTAL": 2307,
+        "N": 769,
+        "BLOCK": 256
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 3813,
+      "cubin_bytes": 6888,
+      "ptx_sha256": "cf41fa788038fe73b5f6ca7d540697a76c0db45f52809b0335d85a0ac4a71418",
+      "cubin_sha256": "9d80c3b304bcb20c58d52ece4aa2d9582ba37758f1dda094b5ab2cbaa417f31e"
+    },
+    {
+      "kernel": "_row_reduce_kernel",
+      "dtype": "fp16",
+      "signature": {
+        "X": "*fp16",
+        "Y": "*fp16"
+      },
+      "constants": {
+        "N": 769,
+        "IS_MAX": false,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 6361,
+      "cubin_bytes": 9184,
+      "ptx_sha256": "499e9e5ee063743754f209c3dbf0d86b63f73abcdbd962b97eec4e7bf77a1c32",
+      "cubin_sha256": "8c146decd09b74deec17ca75a7f9f948ed613044fd911b12dfd64272c73f0758"
+    },
+    {
+      "kernel": "_row_reduce_kernel",
+      "dtype": "fp16",
+      "signature": {
+        "X": "*fp16",
+        "Y": "*fp16"
+      },
+      "constants": {
+        "N": 769,
+        "IS_MAX": true,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 6177,
+      "cubin_bytes": 8800,
+      "ptx_sha256": "5b70914cba0f34a73a55ed547ab8c55ea37c5c6996880a7bdb1ed840b4c0d5a8",
+      "cubin_sha256": "b1b4284564ac677a70919a426db937d0238acb3d858c65ff277399492d2635c7"
+    },
+    {
+      "kernel": "_softmax_kernel",
+      "dtype": "fp16",
+      "signature": {
+        "X": "*fp16",
+        "Y": "*fp16"
+      },
+      "constants": {
+        "N": 769,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 11044,
+      "cubin_bytes": 14944,
+      "ptx_sha256": "af24220aca5d7d3d99079291aecf8a6b53bc0769af70721a70e4c4e49f3fef91",
+      "cubin_sha256": "409a73e45e9d0acc3e9053aeaabda775c0bf8ff262422e7cb72db35d04776294"
+    },
+    {
+      "kernel": "_softmax_kernel",
+      "dtype": "fp16",
+      "signature": {
+        "X": "*fp16",
+        "Y": "*fp16"
+      },
+      "constants": {
+        "N": 8192,
+        "BLOCK": 8192
+      },
+      "options": {
+        "num_warps": 8,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 27158,
+      "cubin_bytes": 36320,
+      "ptx_sha256": "93ce9fc9d101358bce1bfd98cd174ef201ed24244921eaf74e5accce22ff7d54",
+      "cubin_sha256": "91b91452eb154785eff840f878deca88249601ce6d813f203cf8f62154af7ba8"
+    },
+    {
+      "kernel": "_transpose_naive_kernel",
+      "dtype": "fp16",
+      "signature": {
+        "X": "*fp16",
+        "Y": "*fp16"
+      },
+      "constants": {
+        "M": 127,
+        "N": 65,
+        "BLOCK": 256
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 3196,
+      "cubin_bytes": 6120,
+      "ptx_sha256": "2b65930f71c9f3aa7d58ee861368a96612430ac85e33ea2c6027cea20576473a",
+      "cubin_sha256": "4a42ba84f7b19e866796225d6590bbb7a3868bb0011d185abaf8122181a6031e"
+    },
+    {
+      "kernel": "_transpose_tiled_kernel",
+      "dtype": "fp16",
+      "signature": {
+        "X": "*fp16",
+        "Y": "*fp16"
+      },
+      "constants": {
+        "M": 127,
+        "N": 65,
+        "TILE": 32
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 8521,
+      "cubin_bytes": 13408,
+      "ptx_sha256": "4d960299653be960e5777ac8a83342ac41cce2443433a394d97d48dd8bc81679",
+      "cubin_sha256": "b835905654a9bd2cca0993aa8ffef0abc902526b7c5ba2e0bf2b2b0f07c5b36d"
+    },
+    {
+      "kernel": "_matmul_naive_kernel",
+      "dtype": "fp16",
+      "signature": {
+        "A": "*fp16",
+        "B": "*fp16",
+        "C": "*fp16"
+      },
+      "constants": {
+        "M": 17,
+        "N": 33,
+        "K": 19,
+        "BLOCK": 128
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 3177,
+      "cubin_bytes": 9192,
+      "ptx_sha256": "9716d9625ce0d766ca445c39527cc97e3d5f5bed5c40f6d734bc2ce5eeba32b7",
+      "cubin_sha256": "ce9d3c591c43d2f06257426dcedf47e64e88081056d7ec34f60ba7a3f4ea174b"
+    },
+    {
+      "kernel": "_matmul_tiled_kernel",
+      "dtype": "fp16",
+      "signature": {
+        "A": "*fp16",
+        "B": "*fp16",
+        "C": "*fp16"
+      },
+      "constants": {
+        "M": 127,
+        "N": 65,
+        "K": 93,
+        "BM": 32,
+        "BN": 32,
+        "BK": 32
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 15591,
+      "cubin_bytes": 26208,
+      "ptx_sha256": "a8b75cc783ed3d14fe381fbb60176b162db4008050c1cec40440e6e61fa7cd4f",
+      "cubin_sha256": "b391071b0d0fccdf1de9cde36a490a7ad0d2a86ed601a4e18e5581e30fbb07ff"
+    },
+    {
+      "kernel": "_norm_kernel",
+      "dtype": "fp16",
+      "signature": {
+        "X": "*fp16",
+        "W": "*fp16",
+        "Bias": "*fp16",
+        "Y": "*fp16"
+      },
+      "constants": {
+        "N": 769,
+        "EPS": 1e-05,
+        "IS_RMS": false,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 13632,
+      "cubin_bytes": 17328,
+      "ptx_sha256": "aa6de63634d37fdaa7bef5e5a30e7d730a5327ff537857c19ed01404fcdef204",
+      "cubin_sha256": "cfce786287d242295e217580d0a9c3f053240b6aff239f7fd1085cb3946a69ab"
+    },
+    {
+      "kernel": "_norm_kernel",
+      "dtype": "fp16",
+      "signature": {
+        "X": "*fp16",
+        "W": "*fp16",
+        "Bias": "*fp16",
+        "Y": "*fp16"
+      },
+      "constants": {
+        "N": 769,
+        "EPS": 1e-05,
+        "IS_RMS": true,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 9868,
+      "cubin_bytes": 13104,
+      "ptx_sha256": "9f6c093d36bb7adbaebb59c1e81e66309f1b6a8165ab986ccaa9b4e46db31896",
+      "cubin_sha256": "d4e0acd3069827993bb95c024f540fcc551b9b86e282261bea98f553568903c1"
+    },
+    {
+      "kernel": "_attention_kernel",
+      "dtype": "fp16",
+      "signature": {
+        "Q": "*fp16",
+        "K": "*fp16",
+        "V": "*fp16",
+        "Mask": "*fp16",
+        "O": "*fp16"
+      },
+      "constants": {
+        "L": 19,
+        "S": 37,
+        "D": 16,
+        "SCALE": 0.25,
+        "CAUSAL": false,
+        "QUERY_START": 0,
+        "HAS_MASK": false,
+        "MASK_BH_STRIDE": 0,
+        "BM": 16,
+        "BN": 32
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "status": "compiled",
+      "ptx_characters": 21969,
+      "cubin_bytes": 31584,
+      "ptx_sha256": "09084a7f80ce36ded8a1590ca7d3e0a4cdcb4439113f0d5b624c19215abbbff0",
+      "cubin_sha256": "3c86a5bb23821842a6c690eb5ae6d036ff99329c129cffe0d054a3f85bf7e3ff"
+    },
+    {
+      "kernel": "_attention_kernel",
+      "dtype": "fp16",
+      "signature": {
+        "Q": "*fp16",
+        "K": "*fp16",
+        "V": "*fp16",
+        "Mask": "*fp16",
+        "O": "*fp16"
+      },
+      "constants": {
+        "L": 1,
+        "S": 65,
+        "D": 32,
+        "SCALE": 0.1767766952966369,
+        "CAUSAL": true,
+        "QUERY_START": 64,
+        "HAS_MASK": false,
+        "MASK_BH_STRIDE": 0,
+        "BM": 16,
+        "BN": 32
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "status": "compiled",
+      "ptx_characters": 30379,
+      "cubin_bytes": 41568,
+      "ptx_sha256": "c36babacc0c184c578e12755b92b9b6c7108b1371be40a300dcc344f62f9dd84",
+      "cubin_sha256": "722ea3b2581764147bc891241a3d5a80e740cb0b1c14c2e7a6b8b95f63aa6e3a"
+    },
+    {
+      "kernel": "_attention_kernel",
+      "dtype": "fp16",
+      "signature": {
+        "Q": "*fp16",
+        "K": "*fp16",
+        "V": "*fp16",
+        "Mask": "*i1",
+        "O": "*fp16"
+      },
+      "constants": {
+        "L": 19,
+        "S": 37,
+        "D": 64,
+        "SCALE": 0.125,
+        "CAUSAL": true,
+        "QUERY_START": 0,
+        "HAS_MASK": true,
+        "MASK_BH_STRIDE": 703,
+        "BM": 16,
+        "BN": 32
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "status": "compiled",
+      "ptx_characters": 62917,
+      "cubin_bytes": 89696,
+      "ptx_sha256": "f7addd0c4bdcbf7d6a55b2acfb1c9ae3912f6b69ede790e10d4d96296097827d",
+      "cubin_sha256": "00f3c082739b1a8ffe5ef2cf0480112046baf93c915880bef98a978545796a2f"
+    },
+    {
+      "kernel": "_attention_kernel",
+      "dtype": "fp16",
+      "signature": {
+        "Q": "*fp16",
+        "K": "*fp16",
+        "V": "*fp16",
+        "Mask": "*i1",
+        "O": "*fp16"
+      },
+      "constants": {
+        "L": 19,
+        "S": 37,
+        "D": 128,
+        "SCALE": 0.08838834764831845,
+        "CAUSAL": false,
+        "QUERY_START": 0,
+        "HAS_MASK": true,
+        "MASK_BH_STRIDE": 703,
+        "BM": 16,
+        "BN": 32
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "status": "compiled",
+      "ptx_characters": 87158,
+      "cubin_bytes": 123488,
+      "ptx_sha256": "06adf803c5a8bb1a5519a8a20a6534268d211da244c43223c6f891a7fe80bebb",
+      "cubin_sha256": "900dfbb88aa4b8644e59aab4e1270873d00e080de1e9792876b3194c4ff21bcf"
+    },
+    {
+      "kernel": "_vector_add_kernel",
+      "dtype": "bf16",
+      "signature": {
+        "X": "*bf16",
+        "Y": "*bf16",
+        "Z": "*bf16"
+      },
+      "constants": {
+        "N": 1003,
+        "BLOCK": 256
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 3617,
+      "cubin_bytes": 6248,
+      "ptx_sha256": "80992dc9161db56bca5b63df50211abbb155190bafcbed2ee32bef963f478660",
+      "cubin_sha256": "a79011f963c2d4917bac24e2095837bae80a343e45253517f89be14060be4e12"
+    },
+    {
+      "kernel": "_bias_relu_kernel",
+      "dtype": "bf16",
+      "signature": {
+        "X": "*bf16",
+        "Bias": "*bf16",
+        "Y": "*bf16"
+      },
+      "constants": {
+        "TOTAL": 2307,
+        "N": 769,
+        "BLOCK": 256
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 4202,
+      "cubin_bytes": 7016,
+      "ptx_sha256": "bbd4fc166d37e989fa04dfb4982d0a44aad485e72abf1811e0991115b36253f5",
+      "cubin_sha256": "62d9f89d4dfba009a6e698659f1685007879701c0be8bdcc87461a1f8456878f"
+    },
+    {
+      "kernel": "_row_reduce_kernel",
+      "dtype": "bf16",
+      "signature": {
+        "X": "*bf16",
+        "Y": "*bf16"
+      },
+      "constants": {
+        "N": 769,
+        "IS_MAX": false,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 6923,
+      "cubin_bytes": 9440,
+      "ptx_sha256": "566479e621a60b680fc766429ff253ca7a8750fa7f94078b96ca3ccd10e63df3",
+      "cubin_sha256": "c910866d6e4c01a4e0ad9418d70fc6aea60bff4bdfc7e7da186a73839e773525"
+    },
+    {
+      "kernel": "_row_reduce_kernel",
+      "dtype": "bf16",
+      "signature": {
+        "X": "*bf16",
+        "Y": "*bf16"
+      },
+      "constants": {
+        "N": 769,
+        "IS_MAX": true,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 6926,
+      "cubin_bytes": 9312,
+      "ptx_sha256": "0fb7cbee4068f1cf2c8792af293af50eaa3c8ea41d6c71ea0118351f6907fc65",
+      "cubin_sha256": "7af944102bcdf66db1f545e1a523557b6ea47f7738ec6b9fe47d101e63942519"
+    },
+    {
+      "kernel": "_softmax_kernel",
+      "dtype": "bf16",
+      "signature": {
+        "X": "*bf16",
+        "Y": "*bf16"
+      },
+      "constants": {
+        "N": 769,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 11704,
+      "cubin_bytes": 15072,
+      "ptx_sha256": "a524d1e934911b50940668ed472c9ca7ff520e0d1be59894039453e0322c0a3d",
+      "cubin_sha256": "9a9e1718d1589b076d051c96ed75a8d2d5b9ba6300028cedcf1754bd8d5ba19b"
+    },
+    {
+      "kernel": "_softmax_kernel",
+      "dtype": "bf16",
+      "signature": {
+        "X": "*bf16",
+        "Y": "*bf16"
+      },
+      "constants": {
+        "N": 8192,
+        "BLOCK": 8192
+      },
+      "options": {
+        "num_warps": 8,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 29754,
+      "cubin_bytes": 36576,
+      "ptx_sha256": "d40d9ad2b13909c6ad3c7df6fc04b442d7a1e2f5ab8633cd32f7994ceebc2816",
+      "cubin_sha256": "9f8a895410c947add830ec05592d07d643da531fda49d921570dbc518fab5f17"
+    },
+    {
+      "kernel": "_transpose_naive_kernel",
+      "dtype": "bf16",
+      "signature": {
+        "X": "*bf16",
+        "Y": "*bf16"
+      },
+      "constants": {
+        "M": 127,
+        "N": 65,
+        "BLOCK": 256
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 3196,
+      "cubin_bytes": 6120,
+      "ptx_sha256": "2b65930f71c9f3aa7d58ee861368a96612430ac85e33ea2c6027cea20576473a",
+      "cubin_sha256": "4a42ba84f7b19e866796225d6590bbb7a3868bb0011d185abaf8122181a6031e"
+    },
+    {
+      "kernel": "_transpose_tiled_kernel",
+      "dtype": "bf16",
+      "signature": {
+        "X": "*bf16",
+        "Y": "*bf16"
+      },
+      "constants": {
+        "M": 127,
+        "N": 65,
+        "TILE": 32
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 8521,
+      "cubin_bytes": 13408,
+      "ptx_sha256": "4d960299653be960e5777ac8a83342ac41cce2443433a394d97d48dd8bc81679",
+      "cubin_sha256": "b835905654a9bd2cca0993aa8ffef0abc902526b7c5ba2e0bf2b2b0f07c5b36d"
+    },
+    {
+      "kernel": "_matmul_naive_kernel",
+      "dtype": "bf16",
+      "signature": {
+        "A": "*bf16",
+        "B": "*bf16",
+        "C": "*bf16"
+      },
+      "constants": {
+        "M": 17,
+        "N": 33,
+        "K": 19,
+        "BLOCK": 128
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 3363,
+      "cubin_bytes": 9448,
+      "ptx_sha256": "d9d51c4c5a7008b28acd92950cba47ae84fb751bc92c3ba2d81e6af635110b78",
+      "cubin_sha256": "a70c710bbd2bfbc116d0c33e7385390868d1a20998bf9586364d81f637ef324a"
+    },
+    {
+      "kernel": "_matmul_tiled_kernel",
+      "dtype": "bf16",
+      "signature": {
+        "A": "*bf16",
+        "B": "*bf16",
+        "C": "*bf16"
+      },
+      "constants": {
+        "M": 127,
+        "N": 65,
+        "K": 93,
+        "BM": 32,
+        "BN": 32,
+        "BK": 32
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 16111,
+      "cubin_bytes": 26336,
+      "ptx_sha256": "6594b33ea41fbf4f7b4f489d64b5cec8024f7e68ff9a5ea372001bb39b0be127",
+      "cubin_sha256": "758e623a350d8ea0db262ee11b292a9cb1dae716fd9ce06e66f1d4f6119f7757"
+    },
+    {
+      "kernel": "_norm_kernel",
+      "dtype": "bf16",
+      "signature": {
+        "X": "*bf16",
+        "W": "*bf16",
+        "Bias": "*bf16",
+        "Y": "*bf16"
+      },
+      "constants": {
+        "N": 769,
+        "EPS": 1e-05,
+        "IS_RMS": false,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 15639,
+      "cubin_bytes": 18224,
+      "ptx_sha256": "4e7e11a19a3ba794c841e323c1c0ce4db3058272e132f0c7177a4ed1fc7185de",
+      "cubin_sha256": "2ddf0183b0c40d642c6a1a90e8c80326b59d1daa363123918d5a54acda3f7fd8"
+    },
+    {
+      "kernel": "_norm_kernel",
+      "dtype": "bf16",
+      "signature": {
+        "X": "*bf16",
+        "W": "*bf16",
+        "Bias": "*bf16",
+        "Y": "*bf16"
+      },
+      "constants": {
+        "N": 769,
+        "EPS": 1e-05,
+        "IS_RMS": true,
+        "BLOCK": 1024
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "status": "compiled",
+      "ptx_characters": 11376,
+      "cubin_bytes": 13744,
+      "ptx_sha256": "a171faaeb7bd30636138166b61ebcab5c310aec933f72aaca2c2a78de796015e",
+      "cubin_sha256": "00d75b26d0b0bf93edc57467817212cb7ad782d9495741eff108382afa7f3fb0"
+    },
+    {
+      "kernel": "_attention_kernel",
+      "dtype": "bf16",
+      "signature": {
+        "Q": "*bf16",
+        "K": "*bf16",
+        "V": "*bf16",
+        "Mask": "*bf16",
+        "O": "*bf16"
+      },
+      "constants": {
+        "L": 19,
+        "S": 37,
+        "D": 16,
+        "SCALE": 0.25,
+        "CAUSAL": false,
+        "QUERY_START": 0,
+        "HAS_MASK": false,
+        "MASK_BH_STRIDE": 0,
+        "BM": 16,
+        "BN": 32
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "status": "compiled",
+      "ptx_characters": 22163,
+      "cubin_bytes": 31712,
+      "ptx_sha256": "2462868f19c15a66e5bcb81396c8363884b9fe64c64ff3de9f2ba21cd0119ec7",
+      "cubin_sha256": "3222c02d181233da2020e475adf33bf902d19d0fa10e509a3d23e210dc27ab68"
+    },
+    {
+      "kernel": "_attention_kernel",
+      "dtype": "bf16",
+      "signature": {
+        "Q": "*bf16",
+        "K": "*bf16",
+        "V": "*bf16",
+        "Mask": "*bf16",
+        "O": "*bf16"
+      },
+      "constants": {
+        "L": 1,
+        "S": 65,
+        "D": 32,
+        "SCALE": 0.1767766952966369,
+        "CAUSAL": true,
+        "QUERY_START": 64,
+        "HAS_MASK": false,
+        "MASK_BH_STRIDE": 0,
+        "BM": 16,
+        "BN": 32
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "status": "compiled",
+      "ptx_characters": 30767,
+      "cubin_bytes": 41440,
+      "ptx_sha256": "dfa3ef414be5d9b5c00f7533de84f806109cde9a64cb2395e1ab37078acfa3b7",
+      "cubin_sha256": "52100e75028564ece1ea00ef3c562ac3190d82773fabf438b0dc4d092edc3908"
+    },
+    {
+      "kernel": "_attention_kernel",
+      "dtype": "bf16",
+      "signature": {
+        "Q": "*bf16",
+        "K": "*bf16",
+        "V": "*bf16",
+        "Mask": "*i1",
+        "O": "*bf16"
+      },
+      "constants": {
+        "L": 19,
+        "S": 37,
+        "D": 64,
+        "SCALE": 0.125,
+        "CAUSAL": true,
+        "QUERY_START": 0,
+        "HAS_MASK": true,
+        "MASK_BH_STRIDE": 703,
+        "BM": 16,
+        "BN": 32
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "status": "compiled",
+      "ptx_characters": 63693,
+      "cubin_bytes": 89568,
+      "ptx_sha256": "4f468b0c4e34d7d34016b2ac36009836f269575af5ba44c351cb9c51987487e1",
+      "cubin_sha256": "a346e91ae22ce665789ce01f8f9c172ffd18071e20276662793d75805de375b9"
+    },
+    {
+      "kernel": "_attention_kernel",
+      "dtype": "bf16",
+      "signature": {
+        "Q": "*bf16",
+        "K": "*bf16",
+        "V": "*bf16",
+        "Mask": "*i1",
+        "O": "*bf16"
+      },
+      "constants": {
+        "L": 19,
+        "S": 37,
+        "D": 128,
+        "SCALE": 0.08838834764831845,
+        "CAUSAL": false,
+        "QUERY_START": 0,
+        "HAS_MASK": true,
+        "MASK_BH_STRIDE": 703,
+        "BM": 16,
+        "BN": 32
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 1
+      },
+      "status": "compiled",
+      "ptx_characters": 88614,
+      "cubin_bytes": 123104,
+      "ptx_sha256": "e71b4754e21ae24affdde573f20a093fb3d43b0d7dfb7e9f2d3c822598af9dde",
+      "cubin_sha256": "4c782fe5a55b965faa9a9a63fcc9d4a07164ee1612cdd0c46533904d2103ed07"
+    }
+  ]
+}

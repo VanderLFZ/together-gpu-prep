@@ -1,0 +1,61 @@
+ptxas info    : 28 bytes gmem, 224 bytes cmem[4]
+ptxas info    : Compiling entry function '_ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398417row_reduce_kernelILb1EEEvPKfPfll' for 'sm_80'
+ptxas info    : Function properties for _ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398417row_reduce_kernelILb1EEEvPKfPfll
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, used 1 barriers, 1024 bytes smem, 384 bytes cmem[0]
+ptxas info    : Compile time = 4.060 ms
+ptxas info    : Compiling entry function '_ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398417row_reduce_kernelILb0EEEvPKfPfll' for 'sm_80'
+ptxas info    : Function properties for _ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398417row_reduce_kernelILb0EEEvPKfPfll
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, used 1 barriers, 1024 bytes smem, 384 bytes cmem[0]
+ptxas info    : Compile time = 3.385 ms
+ptxas info    : Compiling entry function '_ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398411norm_kernelILb1EEEvPKfS3_S3_Pfllf' for 'sm_80'
+ptxas info    : Function properties for _ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398411norm_kernelILb1EEEvPKfS3_S3_Pfllf
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 20 registers, used 1 barriers, 1024 bytes smem, 404 bytes cmem[0]
+ptxas info    : Compile time = 7.856 ms
+ptxas info    : Compiling entry function '_ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398411norm_kernelILb0EEEvPKfS3_S3_Pfllf' for 'sm_80'
+ptxas info    : Function properties for _ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398411norm_kernelILb0EEEvPKfS3_S3_Pfllf
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 24 registers, used 1 barriers, 1024 bytes smem, 404 bytes cmem[0]
+ptxas info    : Compile time = 10.996 ms
+ptxas info    : Compiling entry function '_ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398416attention_kernelEPKfS2_S2_Pfllllbl' for 'sm_80'
+ptxas info    : Function properties for _ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398416attention_kernelEPKfS2_S2_Pfllllbl
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, used 1 barriers, 1024 bytes smem, 432 bytes cmem[0]
+ptxas info    : Compile time = 34.142 ms
+ptxas info    : Compiling entry function '_ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398419matmul_tiled_kernelEPKfS2_Pflllll' for 'sm_80'
+ptxas info    : Function properties for _ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398419matmul_tiled_kernelEPKfS2_Pflllll
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 38 registers, used 1 barriers, 2048 bytes smem, 416 bytes cmem[0]
+ptxas info    : Compile time = 10.446 ms
+ptxas info    : Compiling entry function '_ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398419matmul_naive_kernelEPKfS2_Pflll' for 'sm_80'
+ptxas info    : Function properties for _ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398419matmul_naive_kernelEPKfS2_Pflll
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, used 0 barriers, 400 bytes cmem[0]
+ptxas info    : Compile time = 12.331 ms
+ptxas info    : Compiling entry function '_ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398422transpose_tiled_kernelEPKfPfllll' for 'sm_80'
+ptxas info    : Function properties for _ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398422transpose_tiled_kernelEPKfPfllll
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, used 1 barriers, 4224 bytes smem, 400 bytes cmem[0]
+ptxas info    : Compile time = 8.543 ms
+ptxas info    : Compiling entry function '_ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398422transpose_naive_kernelEPKfPfll' for 'sm_80'
+ptxas info    : Function properties for _ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398422transpose_naive_kernelEPKfPfll
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 12.768 ms
+ptxas info    : Compiling entry function '_ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398414softmax_kernelEPKfPfll' for 'sm_80'
+ptxas info    : Function properties for _ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398414softmax_kernelEPKfPfll
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 25 registers, used 1 barriers, 1024 bytes smem, 384 bytes cmem[0]
+ptxas info    : Compile time = 10.250 ms
+ptxas info    : Compiling entry function '_ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398416bias_relu_kernelEPKfS2_Pfll' for 'sm_80'
+ptxas info    : Function properties for _ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398416bias_relu_kernelEPKfS2_Pfll
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, used 0 barriers, 392 bytes cmem[0]
+ptxas info    : Compile time = 11.721 ms
+ptxas info    : Compiling entry function '_ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398417vector_add_kernelEPKfS2_Pfl' for 'sm_80'
+ptxas info    : Function properties for _ZN8gpu_prep43_GLOBAL__N__0e90d782_10_kernels_cu_bf72398417vector_add_kernelEPKfS2_Pfl
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 26 registers, used 0 barriers, 384 bytes cmem[0]
+ptxas info    : Compile time = 6.666 ms

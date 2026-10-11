@@ -1,0 +1,26 @@
+{
+  "exercises": 12,
+  "source_files_embedded_in_full": 29,
+  "source_lines_embedded_in_full": 4473,
+  "chapter_code_sections": 77,
+  "explanation_blocks": {
+    "1": 2,
+    "2": 2,
+    "3": 2,
+    "4": 2,
+    "5": 2,
+    "6": 1,
+    "7": 1,
+    "8": 3,
+    "9": 3,
+    "10": 1,
+    "11": 1,
+    "12": 1
+  },
+  "display_and_inline_formulas_rendered": 58,
+  "markdown_characters": 422185,
+  "markdown_bytes": 511517,
+  "html_bytes": 3601382,
+  "code_blocks": 76,
+  "embedded_cjk_font_subsets": 26
+}

@@ -1,0 +1,11 @@
+ManualLinear: forward matches F.linear; parameters: ['weight', 'bias']
+QKV: (2, 5, 24) -> (2, 2, 5, 4) (2, 2, 5, 4) (2, 2, 5, 4)
+Q stride / contiguous: (120, 4, 24, 1) False
+ManualLayerNorm reference match; output dtype: torch.float64
+ManualRMSNorm reference match; output dtype: torch.float64
+Manual attention: matches SDPA using an explicit causal mask
+KV cache: 3-token prefill + 2 decode steps match full causal output
+Cache active length / capacity: 5 / 5
+All-masked attention rows: zero output (before MHA output projection)
+
+STDERR:

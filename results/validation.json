@@ -1,0 +1,77 @@
+{
+  "created_utc": "2026-10-10T04:42:09.804312+00:00",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "torch": "2.5.1+cpu",
+    "triton": "3.1.0",
+    "pytest": "9.1.1",
+    "nvcc": null,
+    "nvidia_smi": null,
+    "cuda_available": false,
+    "triton_interpret": "0",
+    "devices": [],
+    "torch_cuda_runtime": null,
+    "matmul_float32_precision": "highest",
+    "matmul_allow_tf32": false,
+    "matmul_allow_fp16_reduced_precision_reduction": true,
+    "matmul_allow_bf16_reduced_precision_reduction": true
+  },
+  "pytest": {
+    "tests": 449,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 330,
+    "passed": 119
+  },
+  "commands": [
+    {
+      "name": "pytest",
+      "arguments": [
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=results/pytest.xml"
+      ],
+      "exit_code": 0,
+      "log": "pytest.log"
+    },
+    {
+      "name": "torch_layers_demo",
+      "arguments": [
+        "examples/torch_layers_demo.py",
+        "--device",
+        "cpu"
+      ],
+      "exit_code": 0,
+      "log": "torch_layers_demo.log"
+    },
+    {
+      "name": "compile_demo",
+      "arguments": [
+        "examples/compile_demo.py",
+        "--device",
+        "cpu",
+        "--backend",
+        "eager",
+        "--include-cond",
+        "--warmup",
+        "2",
+        "--repeats",
+        "3"
+      ],
+      "exit_code": 0,
+      "log": "compile_demo.log"
+    },
+    {
+      "name": "roofline_demo",
+      "arguments": [
+        "-m",
+        "gpu_prep.roofline"
+      ],
+      "exit_code": 0,
+      "log": "roofline_demo.log"
+    }
+  ],
+  "scope": "CPU numerical/gradient/registration/capture checks; GPU tests explicitly skipped because no GPU is available."
+}

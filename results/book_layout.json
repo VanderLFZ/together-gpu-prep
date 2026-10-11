@@ -1,0 +1,16 @@
+{
+  "desktop": {
+    "width": 1480,
+    "scrollWidth": 1480,
+    "math": 58,
+    "codeBlocks": 76,
+    "fontsReady": "loaded",
+    "missingAnchors": []
+  },
+  "mobile": {
+    "width": 390,
+    "scrollWidth": 390,
+    "scrollY": 765
+  },
+  "errors": []
+}

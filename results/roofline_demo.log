@@ -1,0 +1,77 @@
+{
+  "kind": "mathematical_estimates_not_measurements",
+  "examples": [
+    {
+      "name": "vector_add",
+      "flops": 1000000,
+      "ideal_bytes": 12000000,
+      "assumptions": "Read each of two inputs once, write one output once; ignore caching and launch latency.",
+      "arithmetic_intensity_flop_per_byte": 0.08333333333333333,
+      "ridge_point_flop_per_byte": 50.0,
+      "hypothetical_peak_tflops": 100.0,
+      "hypothetical_bandwidth_tbps": 2.0,
+      "ideal_compute_time_ms": 1e-05,
+      "ideal_memory_time_ms": 0.006,
+      "ideal_time_lower_bound_ms": 0.006,
+      "roofline_tflops": 0.16666666666666666,
+      "model_limiting_resource": "memory",
+      "measured": false
+    },
+    {
+      "name": "gemm",
+      "flops": 33554432,
+      "ideal_bytes": 67141632,
+      "assumptions": "Conventional 2MNK FLOP count, beta=0; load each A/B element once, store each C once. This ideal reuse is not guaranteed by a real kernel.",
+      "arithmetic_intensity_flop_per_byte": 0.4997559785261103,
+      "ridge_point_flop_per_byte": 50.0,
+      "hypothetical_peak_tflops": 100.0,
+      "hypothetical_bandwidth_tbps": 2.0,
+      "ideal_compute_time_ms": 0.00033554432,
+      "ideal_memory_time_ms": 0.033570815999999996,
+      "ideal_time_lower_bound_ms": 0.033570815999999996,
+      "roofline_tflops": 0.9995119570522207,
+      "model_limiting_resource": "memory",
+      "measured": false
+    },
+    {
+      "name": "gemm",
+      "flops": 2147483648,
+      "ideal_bytes": 12582912,
+      "assumptions": "Conventional 2MNK FLOP count, beta=0; load each A/B element once, store each C once. This ideal reuse is not guaranteed by a real kernel.",
+      "arithmetic_intensity_flop_per_byte": 170.66666666666666,
+      "ridge_point_flop_per_byte": 50.0,
+      "hypothetical_peak_tflops": 100.0,
+      "hypothetical_bandwidth_tbps": 2.0,
+      "ideal_compute_time_ms": 0.02147483648,
+      "ideal_memory_time_ms": 0.006291456,
+      "ideal_time_lower_bound_ms": 0.02147483648,
+      "roofline_tflops": 100.0,
+      "model_limiting_resource": "compute",
+      "measured": false
+    },
+    {
+      "name": "gemm",
+      "flops": 1535430,
+      "ideal_bytes": 104444,
+      "assumptions": "Conventional 2MNK FLOP count, beta=0; load each A/B element once, store each C once. This ideal reuse is not guaranteed by a real kernel.",
+      "arithmetic_intensity_flop_per_byte": 14.700988089311018,
+      "ridge_point_flop_per_byte": 50.0,
+      "hypothetical_peak_tflops": 100.0,
+      "hypothetical_bandwidth_tbps": 2.0,
+      "ideal_compute_time_ms": 1.53543e-05,
+      "ideal_memory_time_ms": 5.2222e-05,
+      "ideal_time_lower_bound_ms": 5.2222e-05,
+      "roofline_tflops": 29.401976178622036,
+      "model_limiting_resource": "memory",
+      "measured": false
+    }
+  ],
+  "amdahl_example": {
+    "original_time_fraction": 0.05,
+    "local_speedup": 2.0,
+    "end_to_end_speedup": 1.0256410256410258,
+    "note": "Speedup factor and percent latency reduction are different quantities."
+  }
+}
+
+STDERR:

@@ -1,0 +1,7 @@
+# Install the PyTorch build appropriate for your GPU before this file.
+# The CPU reference implementation can also be studied without a GPU.
+torch>=2.5
+pytest>=8
+numpy>=1.26
+# Optional GPU backend: use the Triton version compatible with your PyTorch.
+# triton>=3.1

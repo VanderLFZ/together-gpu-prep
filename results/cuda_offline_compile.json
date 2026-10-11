@@ -1,0 +1,9 @@
+{
+  "torch_headers": "2.5.1+cpu",
+  "nvcc": "13.0.48",
+  "target": "sm_80",
+  "source_sha256": "c4245c313b733f45089d20f4782b06464b0202259e79fee0c2bbbf67f67a643f",
+  "object_bytes": 411864,
+  "linked": false,
+  "gpu_executed": false
+}

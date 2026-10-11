@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-11",
+  "source_markdown": "GPU_Interview_12_Exercises_ZH.md",
+  "source_markdown_sha256": "f34fcea27d0eeba245fc98537b2f29f4349eb2aa931726f8c1309ba0cd755bfe",
+  "source_html": "GPU_Interview_12_Exercises_ZH.html",
+  "source_html_sha256": "47b13570ea06ab7d847d038434dfc0f05b26e3ed5a5bdbeb69c670e64cf2e922",
+  "pdf": "GPU_Interview_12_Exercises_ZH.pdf",
+  "pdf_bytes": 15045654,
+  "layout": {
+    "exercises": 12,
+    "code_blocks": 76,
+    "formulas": 58,
+    "fonts": "loaded",
+    "broken_images": 0,
+    "missing_internal_links": [],
+    "overflow": []
+  },
+  "pdf_sha256": "3d4a23921711cd71c437d8f3bf8d11a047186fef6db47b470ebe52ae235c0838",
+  "validation": {
+    "pages": 166,
+    "bookmarks": 270,
+    "exercise_bookmarks": [
+      "第 1 题｜Vector Add 与 Bias + ReLU 融合",
+      "第 2 题｜Row Sum 与 Row Max 归约",
+      "第 3 题｜数值稳定的行 Softmax",
+      "第 4 题｜Naive 与 Tiled 物理转置",
+      "第 5 题｜Naive 与 Tiled GEMM",
+      "第 6 题｜Roofline：工作量、流量与瓶颈模型",
+      "第 7 题｜Linear、QKV、Shape 与 Stride",
+      "第 8 题｜LayerNorm 与 RMSNorm：前向、反向与 GPU 实现",
+      "第 9 题｜Attention、MHA、Causal Mask 与 KV Cache",
+      "第 10 题｜torch.compile：Graph Break、Guard 与稳态性能",
+      "第 11 题｜自定义 CUDA / Triton 算子：Fake、Autograd 与编译",
+      "第 12 题｜性能实验、诊断与项目答辩"
+    ],
+    "link_annotations": 117,
+    "code_blocks_checked": 76,
+    "missing_code_lines": [],
+    "page_boundary_errors": [],
+    "blank_pages": [],
+    "unicode_replacement_characters": 0
+  },
+  "visual_review": {
+    "rendered_pages": 166,
+    "thumbnail_reviewed_pages": 166,
+    "scope": "All pages rendered with Poppler and visually inspected; Chinese text, formulas, tables, code wrapping, chapter transitions and page numbering checked."
+  }
+}

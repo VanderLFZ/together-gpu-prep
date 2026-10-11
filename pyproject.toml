@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "together-gpu-interview-prep"
+version = "1.0.0"
+description = "Twelve GPU programming interview exercises: CUDA, Triton, PyTorch, and detailed Chinese explanations"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.5"]
+
+[project.optional-dependencies]
+cuda = ["ninja>=1.11"]
+triton = ["triton>=3.1; platform_system=='Linux'"]
+test = ["pytest>=8", "numpy>=1.26"]
+docs = ["Markdown>=3.7", "Pygments>=2.18", "matplotlib>=3.8", "pymdown-extensions>=10"]
+
+[tool.setuptools.packages.find]
+include = ["gpu_prep*"]
+
+[tool.setuptools.package-data]
+gpu_prep = ["csrc/*.cu", "csrc/*.cpp", "csrc/*.h"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+  "gpu: requires an NVIDIA GPU",
+  "cuda_ext: requires an NVIDIA GPU and a CUDA toolkit to build the extension",
+  "triton: requires an NVIDIA GPU and Triton",
+]

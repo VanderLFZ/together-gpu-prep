@@ -1,0 +1,27 @@
+PyTorch: 2.5.1+cpu device: cpu backend: eager
+Scope: Dynamo capture/result checks. This does NOT benchmark Inductor or prove GPU speedup.
+Expected fullgraph failure for data-dependent Python branch: Unsupported
+Tensor.item
+where: first compiled call including capture/codegen/initialization = 12.645 ms
+where: steady median wall time eager=0.0354 ms, compiled=0.0447 ms
+cond: first compiled call including capture/codegen/initialization = 132.207 ms
+cond: steady median wall time eager=0.2548 ms, compiled=0.1063 ms
+CUDA wrapper: fullgraph capture and numerical agreement passed for this device/backend.
+Triton wrapper: fullgraph capture and numerical agreement passed for this device/backend.
+CUDA wrapper opcheck (registration): {'test_schema': 'SUCCESS', 'test_autograd_registration': 'SUCCESS', 'test_faketensor': 'SUCCESS', 'test_aot_dispatch_dynamic': 'SUCCESS'}
+CUDA wrapper gradcheck (mathematical derivative): True
+Triton wrapper opcheck (registration): {'test_schema': 'SUCCESS', 'test_autograd_registration': 'SUCCESS', 'test_faketensor': 'SUCCESS', 'test_aot_dispatch_dynamic': 'SUCCESS'}
+Triton wrapper gradcheck (mathematical derivative): True
+
+STDERR:
+W1010 10:12:07.195000 71 torch/_dynamo/variables/tensor.py:776] [0/0] Graph break from `Tensor.item()`, consider setting:
+W1010 10:12:07.195000 71 torch/_dynamo/variables/tensor.py:776] [0/0]     torch._dynamo.config.capture_scalar_outputs = True
+W1010 10:12:07.195000 71 torch/_dynamo/variables/tensor.py:776] [0/0] or:
+W1010 10:12:07.195000 71 torch/_dynamo/variables/tensor.py:776] [0/0]     env TORCHDYNAMO_CAPTURE_SCALAR_OUTPUTS=1
+W1010 10:12:07.195000 71 torch/_dynamo/variables/tensor.py:776] [0/0] to include these operations in the captured graph.
+W1010 10:12:07.195000 71 torch/_dynamo/variables/tensor.py:776] [0/0] 
+W1010 10:12:07.195000 71 torch/_dynamo/variables/tensor.py:776] [0/0] Graph break: from user code at:
+W1010 10:12:07.195000 71 torch/_dynamo/variables/tensor.py:776] [0/0]   File "/workspace/scratch/5b150007ed58/together_gpu_prep/examples/compile_demo.py", line 23, in bad_python_branch
+W1010 10:12:07.195000 71 torch/_dynamo/variables/tensor.py:776] [0/0]     if x.sum().item() > 0:
+W1010 10:12:07.195000 71 torch/_dynamo/variables/tensor.py:776] [0/0] 
+W1010 10:12:07.195000 71 torch/_dynamo/variables/tensor.py:776] [0/0] 

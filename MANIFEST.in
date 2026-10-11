@@ -1,0 +1,5 @@
+recursive-include gpu_prep/csrc *.cu *.cpp *.h
+recursive-include docs *.md *.svg
+recursive-include examples *.py
+recursive-include tests *.py
+include README.md requirements.txt

@@ -1,0 +1,54 @@
+.............sssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 16%]
+ssssssssssssssssssssssssssss........................ss.................. [ 32%]
+................................................................ssssssss [ 48%]
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 64%]
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 80%]
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 96%]
+sssssssssssssssss                                                        [100%]
+=========================== short test summary info ============================
+SKIPPED [9] tests/test_cuda_ops.py:36: NVIDIA GPU unavailable; CUDA tests not executed
+SKIPPED [4] tests/test_cuda_ops.py:43: NVIDIA GPU unavailable; CUDA tests not executed
+SKIPPED [4] tests/test_cuda_ops.py:50: NVIDIA GPU unavailable; CUDA tests not executed
+SKIPPED [1] tests/test_cuda_ops.py:57: NVIDIA GPU unavailable; CUDA tests not executed
+SKIPPED [6] tests/test_cuda_ops.py:65: NVIDIA GPU unavailable; CUDA tests not executed
+SKIPPED [1] tests/test_cuda_ops.py:72: NVIDIA GPU unavailable; CUDA tests not executed
+SKIPPED [6] tests/test_cuda_ops.py:77: NVIDIA GPU unavailable; CUDA tests not executed
+SKIPPED [1] tests/test_cuda_ops.py:87: NVIDIA GPU unavailable; CUDA tests not executed
+SKIPPED [12] tests/test_cuda_ops.py:97: NVIDIA GPU unavailable; CUDA tests not executed
+SKIPPED [16] tests/test_cuda_ops.py:104: NVIDIA GPU unavailable; CUDA tests not executed
+SKIPPED [12] tests/test_cuda_ops.py:115: NVIDIA GPU unavailable; CUDA tests not executed
+SKIPPED [1] tests/test_cuda_ops.py:130: NVIDIA GPU unavailable; CUDA tests not executed
+SKIPPED [8] tests/test_cuda_ops.py:152: NVIDIA GPU unavailable; CUDA tests not executed
+SKIPPED [1] tests/test_cuda_ops.py:167: NVIDIA GPU unavailable; CUDA tests not executed
+SKIPPED [1] tests/test_cuda_ops.py:177: NVIDIA GPU unavailable; CUDA tests not executed
+SKIPPED [1] tests/test_cuda_ops.py:201: NVIDIA GPU unavailable; CUDA tests not executed
+SKIPPED [1] tests/test_cuda_ops.py:213: NVIDIA GPU unavailable; CUDA tests not executed
+SKIPPED [1] tests/test_cuda_ops.py:223: two CUDA devices required
+SKIPPED [1] tests/test_cuda_ops.py:237: NVIDIA GPU unavailable; CUDA tests not executed
+SKIPPED [2] tests/test_custom_ops.py:114: requires CUDA runtime, GPU and nvcc extension build
+SKIPPED [27] tests/test_triton_ops.py:62: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [15] tests/test_triton_ops.py:71: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [18] tests/test_triton_ops.py:79: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [18] tests/test_triton_ops.py:88: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [3] tests/test_triton_ops.py:102: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [30] tests/test_triton_ops.py:113: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [42] tests/test_triton_ops.py:123: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [21] tests/test_triton_ops.py:138: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [3] tests/test_triton_ops.py:153: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [1] tests/test_triton_ops.py:162: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [36] tests/test_triton_ops.py:196: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [6] tests/test_triton_ops.py:210: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [1] tests/test_triton_ops.py:232: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [1] tests/test_triton_ops.py:242: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [3] tests/test_triton_ops.py:249: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [6] tests/test_triton_ops.py:257: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [1] tests/test_triton_ops.py:264: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [1] tests/test_triton_ops.py:278: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [4] tests/test_triton_ops.py:289: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [1] tests/test_triton_ops.py:296: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [1] tests/test_triton_ops.py:302: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [1] tests/test_triton_ops.py:319: Triton exercises require an NVIDIA CUDA GPU
+SKIPPED [1] tests/test_triton_ops.py:335: requires two CUDA devices
+119 passed, 330 skipped in 3.46s
+
+STDERR:

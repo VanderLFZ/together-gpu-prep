@@ -1,0 +1,29 @@
+# Local environments and Python build products
+.venv/
+.venv-*/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+
+# Documentation dependencies and temporary renders
+node_modules/
+.book_deps/
+tmp/
+
+# Local machine files and credentials
+.DS_Store
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Keep the delivered textbook PDF; ignore other generated PDFs
+output/pdf/*
+!output/pdf/GPU_Interview_12_Exercises_ZH.pdf
